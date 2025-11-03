@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Manga Translator",
+  "version": "1.3",
+  "description": "Translates manga using local LLM and OCR",
+  "icons": {
+    "48": "icon.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["tesseract/tesseract.min.js", "content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    "tesseract/worker.min.js",
+    "tesseract/tesseract-core.wasm.js",
+    "tesseract/traineddata/*.gz"
+  ]
+}

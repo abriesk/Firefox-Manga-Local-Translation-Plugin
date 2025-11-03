@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manga Translator Settings</title>
+  <style>
+    body { width: 300px; padding: 10px; font-family: Arial; }
+    input, select { width: 100%; margin: 5px 0; }
+    button { margin: 5px 0; }
+    #status { color: green; }
+    #error { color: red; }
+  </style>
+</head>
+<body>
+  <h2>Manga Translator</h2>
+  <label>LLM API Endpoint:</label>
+  <input id="apiUrl" type="url" placeholder="http://localhost:5001">
+  <label>Source Language:</label>
+  <select id="sourceLang">
+    <option value="jpn">Japanese</option>
+    <option value="kor">Korean</option>
+    <option value="chi_sim">Chinese (Simplified)</option>
+  </select>
+  <button id="save">Save Settings</button>
+  <button id="test">Test Connection</button>
+  <button id="start">Start Translation</button>
+  <div id="status"></div>
+  <div id="error"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
